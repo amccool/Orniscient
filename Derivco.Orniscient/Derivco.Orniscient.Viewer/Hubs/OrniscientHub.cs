@@ -7,7 +7,7 @@ using Microsoft.AspNet.SignalR.Hubs;
 
 namespace Derivco.Orniscient.Viewer.Hubs
 {
-    [HubName("orniscientHub")]
+    [HubName("OrniscientHub")]
     public class OrniscientHub : Hub
     {
         public override Task OnConnected()

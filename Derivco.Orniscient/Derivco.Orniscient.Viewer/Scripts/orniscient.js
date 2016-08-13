@@ -1,7 +1,7 @@
 ﻿
 (function (orniscient, $, undefined) {
 
-    var hub = $.connection.orniscientHub,
+    var hub = $.connection.OrniscientHub,
         nodes = new vis.DataSet([]),
         edges = new vis.DataSet([]),
         container,
