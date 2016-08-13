@@ -101,7 +101,7 @@
 
             //find and update 
             var updateNode = orniscient.data.nodes.get(grainData.Id);
-            if (updateNode != undefined) {
+            if (updateNode !== undefined) {
                 updateNode.label = nodeLabel;
                 updateNode.value = grainData.Count;
                 orniscient.data.nodes.update(updateNode);
@@ -147,7 +147,7 @@
         $.each(links, function (index, link) {
             var linkId = (link.FromId + '_' + link.ToId).replace(/[^\w]/gi, '.');
             var updateEdge = orniscient.data.edges.get(linkId);
-            if (updateEdge != undefined) {
+            if (updateEdge !== undefined) {
                 updateEdge.value = link.Count;
                 updateEdge.label= link.Count;
                 orniscient.data.edges.update(updateEdge);
@@ -194,7 +194,7 @@
                 infoRows = infoRows + "<tr><td><strong>Silo</strong></td><td>" + node.silo + "</td></tr>";
                 infoRows = infoRows + "<tr><td><strong>Grain Type</strong></td><td>" + node.graintype + "</td></tr>";
 
-                if (xhr.responseText != null && xhr.responseText !== "") {
+                if (xhr.responseText !== null && xhr.responseText !== "") {
                     grainInfo = JSON.parse(xhr.responseText);
                     for (var i = 0; i < grainInfo.length; i++) {
                         infoRows = infoRows + "<tr><td><strong>" + grainInfo[i].FilterName + "<strong></td><td>" + grainInfo[i].Value + "</td></tr>";
