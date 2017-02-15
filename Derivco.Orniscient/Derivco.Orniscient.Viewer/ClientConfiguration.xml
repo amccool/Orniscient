@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<ClientConfiguration xmlns="urn:orleans">
+
+  <!-- original DeploymentId = "R5Enterprise" -->
+  <!-- original Server=ENGINTLABSQLC.sbp-rbdev.net -->
+  <SystemStore SystemStoreType ="SqlServer" 
+                 DeploymentId="R5Ent-v1.0" 
+                 DataConnectionString="Server=NCI-R5ESQL01.dev-r5ead.net\mssqlsvr02;Database=Orleans;User ID=orleans;password=orleans;" />
+
+  <!--<StatisticsProviders>
+    <Provider
+			 Type="Orleans.Providers.SqlServer.SqlStatisticsPublisher"
+			 Name="SQLStatsProvider"
+       ConnectionString="Server=NCI-R5ESQL01.dev-r5ead.net\mssqlsvr02;Database=Orleans;User ID=orleans;password=orleans;" />
+  </StatisticsProviders>-->
+
+
+  <StreamProviders>
+    <Provider Type="Orleans.Providers.Streams.SimpleMessageStream.SimpleMessageStreamProvider"
+              Name="NCI-BRC"
+              FireAndForgetDelivery="false"/>
+  </StreamProviders>
+  
+  <GatewayProvider ProviderType="SqlServer"/>
+
+  <!--<Statistics
+    ProviderType="SQLStatsProvider"
+    MetricsTableWriteInterval="30s" PerfCounterWriteInterval="30s" LogWriteInterval="300s" 
+    WriteLogStatisticsToTable="true" StatisticsCollectionLevel="Info"/>-->
+
+  <Tracing 
+    DefaultTraceLevel="Warning" 
+    TraceToFile=""
+    TraceToConsole="false"
+    >
+    <!--<TraceLevelOverride LogPrefix="Runtime" TraceLevel="Info" />
+    <TraceLevelOverride LogPrefix="Grain" TraceLevel="Info" />
+    <TraceLevelOverride LogPrefix="Application" TraceLevel="Info" />
+    <TraceLevelOverride LogPrefix="Provider" TraceLevel="Info" />-->
+  </Tracing>
+
+</ClientConfiguration>

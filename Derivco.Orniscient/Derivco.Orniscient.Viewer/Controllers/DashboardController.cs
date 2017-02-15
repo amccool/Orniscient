@@ -20,7 +20,7 @@ namespace Derivco.Orniscient.Viewer.Controllers
             {
                 this.ViewBag.AllowMethodsInvocation = AllowMethodsInvocation();
 
-                await Task.Run(async () => await GrainClientInitializer.InitializeIfRequired(Server.MapPath("~/DevTestClientConfiguration.xml")));
+                await Task.Run(async () => await GrainClientInitializer.InitializeIfRequired(Server.MapPath("~/ClientConfiguration.xml")));
                 return View();
             }
             catch (Exception ex)

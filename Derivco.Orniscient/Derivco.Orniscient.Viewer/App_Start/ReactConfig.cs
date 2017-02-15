@@ -1,3 +1,5 @@
+using React;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Derivco.Orniscient.Viewer.ReactConfig), "Configure")]
 
 namespace Derivco.Orniscient.Viewer
